@@ -8,10 +8,10 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
-songplay_table_create = ("CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL NOT NULL,  \
-                                                                start_time varchar, \
-                                                                user_id int, \
-                                                                level varchar, \
+songplay_table_create = ("CREATE TABLE IF NOT EXISTS songplays (songplay_id SERIAL NOT NULL PRIMARY KEY,  \
+                                                                start_time varchar NOT NULL, \
+                                                                user_id int NOT NULL, \
+                                                                level varchar NOT NULL, \
                                                                 song_id varchar,\
                                                                 artist_id varchar, \
                                                                 session_id int, \
@@ -22,7 +22,7 @@ user_table_create = ("CREATE TABLE IF NOT EXISTS users (user_id int NOT NULL Pri
                                                         first_name varchar, \
                                                         last_name varchar, \
                                                         gender char, \
-                                                        level varchar)")
+                                                        level varchar NOT NULL)")
 
 song_table_create = ("CREATE TABLE IF NOT EXISTS songs (song_id varchar NOT NULL Primary Key, \
                                                         title varchar, \
@@ -54,7 +54,7 @@ songplay_table_insert = ("INSERT INTO songplays (start_time, \
                                                  session_id, \
                                                  location, \
                                                  user_agent) \
-                          VALUES (%s, %s, %s, %s, %s, %s, %s, %s) ")
+                          VALUES (%s, %s, %s, %s, %s, %s, %s, %s)")
 
 user_table_insert = ("INSERT INTO users (user_id, \
                                          first_name, \
