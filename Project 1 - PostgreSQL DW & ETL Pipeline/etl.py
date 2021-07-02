@@ -43,7 +43,7 @@ def process_log_file(cur, filepath):
     cur : cursor object for db connection 
     filepath: string object for filepath
     
-    returns:
+    Return:
     none
     
     """
@@ -116,7 +116,7 @@ def process_data(cur, conn, filepath, func):
     filepath: string object for filepath
     func: Function for ETL process
     
-    returns:
+    Return:
     none
     
     """
